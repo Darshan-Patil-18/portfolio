@@ -346,6 +346,29 @@ body.dark .modal-content {
     flex-direction: column;
   }
 }
+/* ✅ MOBILE FIXES FOR SUN ICON AND LANGUAGES ONLY */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: left;
+  }
+
+  nav ul li button.icon-btn {
+    width: auto;
+    margin-left: 10px;
+  }
+
+  .languages p {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
   </style>
 </head>
