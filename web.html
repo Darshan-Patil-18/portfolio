@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Darshan Patil | Aspiring Data Scientist</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * { scroll-behavior: smooth; }
+
+    html {
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0f8ff, #e0f7fa);
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #004d40;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+    }
+
+    body.dark .icon-btn {
+      color: #80deea;
+    }
+
+    header {
+      background-color: #0097a7;
+      color: white;
+      padding: 90px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #006064;
+      border-bottom: 2px solid #0097a7;
+      display: inline-block;
+    }
+
+    .about p {
+      line-height: 1.7;
+    }
+
+    .highlight-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .highlight-box span {
+      padding: 8px 16px;
+      border: 2px solid #0097a7;
+      border-radius: 25px;
+      background-color: #e0f2f1;
+      font-weight: bold;
+      color: #004d40;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .project-card h3 {
+      margin-top: 15px;
+      color: #00796b;
+    }
+
+    .project-card a {
+      color: #00796b;
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Certificates */
+    .certificate-card {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #f1fefb;
+      border-left: 5px solid #0097a7;
+      border-radius: 8px;
+      color: #004d40;
+    }
+
+    body.dark .certificate-card {
+      background: #1e1e1e;
+      color: #b2ebf2;
+      border-left-color: #4dd0e1;
+    }
+
+    .certificate-card a {
+      color: #00796b;
+    }
+
+    .pdf-container {
+      margin-top: 15px;
+    }
+
+    /* Languages Section */
+    .languages {
+      background-color: #e0f7fa;
+      padding: 10px 20px;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: 40px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .languages h2 {
+      font-size: 1.6rem;
+      color: #006064;
+      margin-bottom: 15px;
+    }
+
+    .languages p {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .languages span {
+      background-color: #b2ebf2;
+      color: #004d40;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    body.dark .languages {
+      background-color: #263238;
+    }
+
+    body.dark .languages span {
+      background-color: #37474f;
+      color: #80deea;
+    }
+
+    /* DARK MODE */
+    body.dark {
+      background: linear-gradient(to right, #121212, #1c1c1c);
+      color: #eee;
+    }
+
+    body.dark nav {
+      background-color: #1e1e1e;
+    }
+
+    body.dark header {
+      background-color: #222;
+    }
+
+    body.dark .section-title,
+    body.dark nav ul li a,
+    body.dark .project-card a {
+      color: #80deea;
+    }
+
+    body.dark .highlight-box span {
+      background-color: #263238;
+      border-color: #4dd0e1;
+      color: #80deea;
+    }
+
+    body.dark .project-card {
+      background-color: #2e2e2e;
+      color: #ddd;
+    }
+    /* MODAL STYLES */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.modal-content video {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.modal-content .desc {
+  width: 50%;
+}
+
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+body.dark .modal-content {
+  background-color: #1e1e1e;
+  color: #b2ebf2;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <!-- LinkedIn (Left Corner) -->
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="22" />
+      <a href="https://www.linkedin.com/in/darshan-patil-d180745" target="_blank" style="color: white; font-weight: 500; text-decoration: none;">LinkedIn</a>
+    </div>
+
+    <!-- Navigation Center -->
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li>
+        <button class="icon-btn" onclick="toggleDarkMode()" title="Toggle Theme">
+          <span class="material-icons" id="theme-icon">light_mode</span>
+        </button>
+      </li>
+    </ul>
+
+    <!-- Email (Right Corner) -->
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" width="20" />
+      <span style="font-weight: 500;">darshanpatil9518@gmail.com</span>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Darshan Patil</h1>
+    <p>Aspiring Data Scientist | CSE - Data Science | SAL College of Engineering (2023–2027)</p>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am a passionate and enthusiastic data science student with a strong foundation in Python, data analysis, and visualization. Currently pursuing my B.E. in CSE (Data Science), I love turning data into meaningful insights. I enjoy building real-world projects, exploring new technologies, and continuously improving my technical and analytical skills.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="highlight-box">
+      <span>Python</span>
+      <span>Numpy</span>
+      <span>Pandas</span>
+      <span>Data Analysis</span>
+      <span>Tableau</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="project1.jpg" alt="Fake News Detection">
+        <h3>Fake News Detection</h3>
+        <p>ML model to classify news as fake or real using TF-IDF and Logistic Regression.</p>
+        <a onclick="openModal('Fake News Detection', 'project1_video.mp4', 'Detects fake news using NLP and Logistic Regression.')">See more</a>
+      </div>
+      <div class="project-card">
+        <img src="project2.jpg" alt="Loan Prediction">
+        <h3>Loan Eligibility Prediction</h3>
+        <p>Predicts loan eligibility using cleaned data and logistic regression pipeline.</p>
+        <a onclick="openModal('Loan Eligibility Prediction', 'project2_video.mp4', 'Predicts loan eligibility using pandas, sklearn, and preprocessing pipeline.')">See more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates">
+    <h2 class="section-title">Certificates</h2>
+
+    <div class="certificate-card">
+      <h3>1. Deloitte Data Analytics Virtual Experience</h3>
+      <p>Completed real-world data analysis and forensic tasks using Tableau.</p>
+      <a href="javascript:void(0)" onclick="toggleCertificate('cert1')">View Certificate</a>
+      <div id="cert1" class="pdf-container" style="display: none;">
+        <iframe src="https://drive.google.com/file/d/13SpVJo6H1zr2xpfHiHzb2_abLrjFHcUR/preview" width="100%" height="500px" style="border:none;"></iframe>
+      </div>
+    </div>
+
+    <div class="certificate-card">
+      <h3>2. Python Skill Certification – OneRoadmap</h3>
+      <p>Earned by completing a Python MCQ test based on concepts and accuracy criteria.</p>
+      <a href="javascript:void(0)" onclick="toggleCertificate('cert2')">View Certificate</a>
+      <div id="cert2" class="pdf-container" style="display: none;">
+        <iframe src="https://drive.google.com/file/d/11vCs7l14PlhlnLagnGCVRCkdWVsI00VO/preview" width="100%" height="500px" style="border:none;"></iframe>
+      </div>
+    </div>
+
+    <div class="certificate-card">
+      <h3>3. Python Course Completion – GeeksforGeeks</h3>
+      <p>Completed a structured course on Python fundamentals and OOPs by GFG.</p>
+      <a href="javascript:void(0)" onclick="toggleCertificate('cert3')">View Certificate</a>
+      <div id="cert3" class="pdf-container" style="display: none;">
+        <iframe src="https://media.geeksforgeeks.org/courses/certificates/439c97b22bb1930e578edd7510a28ea1.pdf" width="100%" height="500px" style="border:none;"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="languages" class="languages">
+    <h2 class="section-title">Languages Known</h2>
+    <p>
+      <span>Hindi</span>
+      <span>English</span>
+      <span>Marathi</span>
+    </p>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+  function toggleDarkMode() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+    body.classList.toggle('dark');
+    icon.textContent = body.classList.contains('dark') ? 'dark_mode' : 'light_mode';
+  }
+
+  function toggleCertificate(certId) {
+    const allCerts = document.querySelectorAll('.pdf-container');
+    allCerts.forEach(cert => {
+      if (cert.id !== certId) cert.style.display = 'none';
+    });
+
+    const target = document.getElementById(certId);
+    target.style.display = target.style.display === 'none' ? 'block' : 'none';
+  }
+
+  // 🟢 PROJECT MODAL FUNCTIONS
+  function openModal(title, videoSrc, desc) {
+    const modal = document.getElementById('projectModal');
+    modal.style.display = 'flex';
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalVideo').src = videoSrc;
+    document.getElementById('modalDesc').innerText = desc;
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('projectModal');
+    modal.style.display = 'none';
+    document.getElementById('modalVideo').pause();
+  }
+
+  function outsideClick(e) {
+    if (e.target.id === 'projectModal') closeModal();
+  }
+</script>
+
+    
+  </script>
+  <!-- MODAL for Projects -->
+<div class="modal" id="projectModal" onclick="outsideClick(event)">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <video id="modalVideo" controls></video>
+    <div class="desc">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
